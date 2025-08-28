@@ -141,5 +141,4 @@ function initializeWhatsAppFloat() {
             waFloatForm.classList.remove('active');
         }
     });
-
 }

@@ -4213,7 +4213,8 @@ textarea.form-control {
 .wa-form-header {
     padding: 15px;
     background-color: #2e481a;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #232323;
+    border-radius: 15px 15px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -4229,7 +4230,7 @@ textarea.form-control {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #666;
+    color: #232323;
 }
 
 .wa-form-body {
@@ -4238,6 +4239,7 @@ textarea.form-control {
 
 .wa-form-body .form-control{
     font-size: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 24px !important;
 }
 
