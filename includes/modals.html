@@ -6,7 +6,7 @@
                 <h5 class="modal-title card-title mbr-fonts-style display-5" id="logisticsModalLabel">
                     <strong>Get Your Free Logistics Plan</strong>
                 </h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -14,55 +14,54 @@
                 <p class="mbr-text display-7">Let us create a tailored logistics solution that perfectly matches your business needs. Please provide the details below for your personalized plan.</p>
                 <form id="logisticsForm" class="needs-validation" novalidate>
                     <!-- Contact Information -->
-                    <div class="form-section mb-4">
-                        <h6 class="mb-3 display-7"><strong>Contact Information</strong></h6>
+                    <div class="form-section">
+                        <h6 class=" display-7"><strong>Contact Information</strong></h6>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 ">
                                 <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 ">
                                 <input type="text" class="form-control" id="businessName" placeholder="Business Name" required>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 ">
                                 <input type="email" class="form-control" id="businessEmail" placeholder="Business Email" required>
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 ">
                                 <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number" required>
                             </div>
                         </div>
                     </div>
 
                     <!-- Service & Cargo Details -->
-                    <div class="form-section mb-4">
-                        <h6 class="mb-3 display-7"><strong>Service & Cargo Details</strong></h6>
+                    <div class="form-section">
+                        <h6 class=" display-7"><strong>Service & Cargo Details</strong></h6>
                         <div class="mb-3">
-                            <label class="form-label">Services Needed</label>
                             <div class="checkbox-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="airFreight" id="airFreight">
-                                    <label class="form-check-label" for="airFreight">Air Freight</label>
+                                    <input class="form-check-input display-7" type="checkbox" value="airFreight" id="airFreight">
+                                    <label class="form-check-label display-7" for="airFreight">Air Freight</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="seaFreight" id="seaFreight">
-                                    <label class="form-check-label" for="seaFreight">Sea Freight</label>
+                                    <input class="form-check-input display-7" type="checkbox" value="seaFreight" id="seaFreight">
+                                    <label class="form-check-label display-7" for="seaFreight">Sea Freight</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="roadLogistics" id="roadLogistics">
-                                    <label class="form-check-label" for="roadLogistics">European Road Logistics</label>
+                                    <input class="form-check-input display-7" type="checkbox" value="roadLogistics" id="roadLogistics">
+                                    <label class="form-check-label display-7" for="roadLogistics">European Road Logistics</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="warehousing" id="warehousing">
-                                    <label class="form-check-label" for="warehousing">Warehousing/Fulfillment</label>
+                                    <input class="form-check-input display-7" type="checkbox" value="warehousing" id="warehousing">
+                                    <label class="form-check-label display-7" for="warehousing">Warehousing/Fulfillment</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="customs" id="customs">
-                                    <label class="form-check-label" for="customs">Customs Clearance</label>
+                                    <input class="form-check-input display-7" type="checkbox" value="customs" id="customs">
+                                    <label class="form-check-label display-7" for="customs">Customs Clearance</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="other" id="otherService">
-                                    <label class="form-check-label" for="otherService">Other</label>
+                                    <input class="form-check-input display-7" type="checkbox" value="other" id="otherService">
+                                    <label class="form-check-label display-7" for="otherService">Other</label>
                                 </div>
                             </div>
                             <div class="mt-2 d-none" id="otherServiceField">
@@ -70,44 +69,44 @@
                             </div>
                         </div>
 
-                        <div class="mb-3">
+                        <div class="">
                             <textarea class="form-control" id="cargoDescription" rows="2" placeholder="Cargo Description (e.g., '5 pallets of electronics')" required></textarea>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 ">
                                 <input type="text" class="form-control" id="origin" placeholder="Origin (Country/City)" required>
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 ">
                                 <input type="text" class="form-control" id="destination" placeholder="Destination (Country/City)" required>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
+                        <div class="row hidden">
+                            <div class="col-md-3 ">
                                 <input type="number" class="form-control" id="length" placeholder="Length (cm)">
                             </div>
-                            <div class="col-md-3 mb-3">
+                            <div class="col-md-3 ">
                                 <input type="number" class="form-control" id="width" placeholder="Width (cm)">
                             </div>
-                            <div class="col-md-3 mb-3">
+                            <div class="col-md-3 ">
                                 <input type="number" class="form-control" id="height" placeholder="Height (cm)">
                             </div>
-                            <div class="col-md-3 mb-3">
+                            <div class="col-md-3 ">
                                 <input type="number" class="form-control" id="weight" placeholder="Weight (kg)">
                             </div>
                         </div>
                     </div>
 
                     <!-- Timeline -->
-                    <div class="form-section mb-4">
-                        <h6 class="mb-3 display-7"><strong>Timeline</strong></h6>
+                    <div class="form-section">
+                        <h6 class=" display-7"><strong>Timeline</strong></h6>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 ">
                                 <label class="form-label">Ready Date</label>
                                 <input type="date" class="form-control" id="readyDate" required>
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 ">
                                 <label class="form-label">Desired Delivery Date</label>
                                 <input type="date" class="form-control" id="deliveryDate" required>
                             </div>
@@ -137,27 +136,27 @@
                 <h5 class="modal-title card-title mbr-fonts-style display-5" id="contactModalLabel">
                     <strong>Speak with Our Logistics Advisor</strong>
                 </h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" id="contactInitialContent">
                 <p class="mbr-text display-7">Let's discuss how we can help optimize your logistics operations. Our expert advisor will get in touch to understand your needs better.</p>
                 <form id="contactForm" class="needs-validation" novalidate>
-                    <div class="form-section mb-4">
-                        <div class="mb-3">
+                    <div class="form-section">
+                        <div class="">
                             <input type="text" class="form-control" id="advisorName" placeholder="Full Name" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="">
                             <input type="text" class="form-control" id="advisorBusinessName" placeholder="Business Name" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="">
                             <input type="email" class="form-control" id="advisorEmail" placeholder="Business Email" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="">
                             <input type="tel" class="form-control" id="advisorPhone" placeholder="Phone Number" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="">
                             <select class="form-select" id="industry" required>
                                 <option value="">Select Your Industry</option>
                                 <option value="ecommerce">E-commerce</option>
@@ -167,10 +166,10 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <div class="mb-3">
+                        <div class="">
                             <textarea class="form-control" id="logisticsChallenge" rows="3" placeholder="What logistics challenges are you currently facing?" required></textarea>
                         </div>
-                        <div class="mb-3">
+                        <div class="">
                             <label class="form-label">Preferred Contact Time</label>
                             <div class="row">
                                 <div class="col-md-6">
