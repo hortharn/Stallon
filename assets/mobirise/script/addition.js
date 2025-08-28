@@ -108,47 +108,38 @@ function initializeWhatsAppFloat() {
     const waCloseBtn = document.getElementById('waCloseBtn');
     const waSendBtn = document.getElementById('waSendBtn');
 
-    // Only initialize if elements exist
-    if (waFloatBtn && waFloatForm && waCloseBtn && waSendBtn) {
-        // Your WhatsApp number
-        const waNumber = '+447496875772';
+    // Your WhatsApp number
+    const waNumber = '+447496875772';
 
-        waFloatBtn.addEventListener('click', function() {
-            waFloatForm.classList.add('active');
-        });
+    waFloatBtn.addEventListener('click', function() {
+        waFloatForm.classList.add('active');
+    });
 
-        waCloseBtn.addEventListener('click', function() {
-            waFloatForm.classList.remove('active');
-        });
+    waCloseBtn.addEventListener('click', function() {
+        waFloatForm.classList.remove('active');
+    });
 
-        waSendBtn.addEventListener('click', function() {
-            const name = document.getElementById('waName').value;
-            const subject = document.getElementById('waSubject').value;
-            const message = document.getElementById('waMessage').value;
+    waSendBtn.addEventListener('click', function() {
+        const name = document.getElementById('waName').value;
+        const subject = document.getElementById('waSubject').value;
+        const message = document.getElementById('waMessage').value;
+        
+        if (name && subject && message) {
+            // Format the message
+            const formattedMessage = `*New Message from Website*%0A%0A*Name:* ${name}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
             
-            if (name && subject && message) {
-                // Format the message
-                const formattedMessage = `*New Message from Website*%0A%0A*Name:* ${name}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
-                
-                // Create WhatsApp URL
-                const waURL = `https://wa.me/${waNumber}?text=${formattedMessage}`;
-                
-                // Open WhatsApp
-                window.open(waURL, '_blank');
-                
-                // Reset form
-                document.getElementById('waName').value = '';
-                document.getElementById('waSubject').value = '';
-                document.getElementById('waMessage').value = '';
-                waFloatForm.classList.remove('active');
-            }
-        });
+            // Create WhatsApp URL
+            const waURL = `https://wa.me/${waNumber}?text=${formattedMessage}`;
+            
+            // Open WhatsApp
+            window.open(waURL, '_blank');
+            
+            // Reset form
+            document.getElementById('waName').value = '';
+            document.getElementById('waSubject').value = '';
+            document.getElementById('waMessage').value = '';
+            waFloatForm.classList.remove('active');
+        }
+    });
 
-        // Optional: Close form when clicking outside
-        /*document.addEventListener('click', function(e) {
-            if (!waFloatForm.contains(e.target) && e.target !== waFloatBtn) {
-                waFloatForm.classList.remove('active');
-            }
-        });*/
-    }
 }

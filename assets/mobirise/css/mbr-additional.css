@@ -4203,7 +4203,7 @@ textarea.form-control {
     position: absolute;
     bottom: 80px;
     right: 0;
-    width: 300px;
+    width: 360px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -4212,6 +4212,7 @@ textarea.form-control {
 
 .wa-form-header {
     padding: 15px;
+    background-color: #2e481a;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
@@ -4219,7 +4220,8 @@ textarea.form-control {
 }
 
 .wa-form-header h6 {
-    margin: 0;
+  color: #9fe870;
+  margin: 0;
 }
 
 .wa-close {
@@ -4232,6 +4234,11 @@ textarea.form-control {
 
 .wa-form-body {
     padding: 15px;
+}
+
+.wa-form-body .form-control{
+    font-size: 1rem;
+    border-radius: 24px !important;
 }
 
 .wa-float-form.active {
