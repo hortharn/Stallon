@@ -145,17 +145,10 @@ function initializeWhatsAppFloat() {
         });
 
         // Optional: Close form when clicking outside
-        document.addEventListener('click', function(e) {
+        /*document.addEventListener('click', function(e) {
             if (!waFloatForm.contains(e.target) && e.target !== waFloatBtn) {
                 waFloatForm.classList.remove('active');
             }
-        });
+        });*/
     }
 }
-    
-    // Close form when clicking outside
-    /*document.addEventListener('click', function(e) {
-        if (!waFloatForm.contains(e.target) && e.target !== waFloatBtn) {
-            waFloatForm.classList.remove('active');
-        }
-    });*/

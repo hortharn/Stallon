@@ -4176,10 +4176,10 @@ textarea.form-control {
 }
 
 .wa-float-btn {
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background-color: #25D366;
+    background-color: #232323;
     border: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     cursor: pointer;
@@ -4189,7 +4189,7 @@ textarea.form-control {
     justify-content: center;
 }
 
-.wa-float-btn i {
+.wa-float-btn span {
     font-size: 2rem;
     color: white;
 }
