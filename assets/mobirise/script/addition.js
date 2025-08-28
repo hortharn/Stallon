@@ -100,15 +100,13 @@ function initializeServiceFields() {
     }
 }
 
-// WhatsApp Float Button Functionality
-document.addEventListener('DOMContentLoaded', function() {
     const waFloatBtn = document.getElementById('waFloatBtn');
     const waFloatForm = document.getElementById('waFloatForm');
     const waCloseBtn = document.getElementById('waCloseBtn');
     const waSendBtn = document.getElementById('waSendBtn');
     
     // Your WhatsApp number
-    const waNumber = '1234567890'; // Replace with your WhatsApp number
+    const waNumber = '+447496875772';
     
     waFloatBtn.addEventListener('click', function() {
         waFloatForm.classList.add('active');
@@ -142,9 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Close form when clicking outside
-    document.addEventListener('click', function(e) {
+    /*document.addEventListener('click', function(e) {
         if (!waFloatForm.contains(e.target) && e.target !== waFloatBtn) {
             waFloatForm.classList.remove('active');
         }
-    });
-});
+    });*/
