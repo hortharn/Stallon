@@ -1,3 +1,31 @@
+<!-- WhatsApp Float Button -->
+<div class="wa-float-container">
+    <button class="wa-float-btn" id="waFloatBtn">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+    
+    <div class="wa-float-form" id="waFloatForm">
+        <div class="wa-form-header">
+            <h6 class="display-7"><strong>Message Us on WhatsApp</strong></h6>
+            <button type="button" class="wa-close" id="waCloseBtn">&times;</button>
+        </div>
+        <div class="wa-form-body">
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" id="waName" placeholder="Your Name" required>
+            </div>
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" id="waSubject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mb-3">
+                <textarea class="form-control" id="waMessage" rows="3" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="button" class="btn btn-success w-100" id="waSendBtn">
+                <i class="fa-brands fa-whatsapp me-2"></i>Send Message
+            </button>
+        </div>
+    </div>
+</div>
+
 <!-- Logistics Plan Modal -->
 <div class="modal fade" id="logisticsModal" tabindex="-1" role="dialog" aria-labelledby="logisticsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg h-auto" role="document">
