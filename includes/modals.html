@@ -1,70 +1,210 @@
-
-<!-- Add this modal code before the closing </body> tag -->
+<!-- Logistics Plan Modal -->
 <div class="modal fade" id="logisticsModal" tabindex="-1" role="dialog" aria-labelledby="logisticsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title card-title mbr-fonts-style display-5" id="logisticsModalLabel">Your Custom Logistics Plan Awaits</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true hidden">&times;</span>
+                <h5 class="modal-title card-title mbr-fonts-style display-5" id="logisticsModalLabel">
+                    <strong>Get Your Free Logistics Plan</strong>
+                </h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" id="modalInitialContent">
-                <p class="mbr-text display-7">Ready to take control of your supply chain? Enter your email below to receive your personalized logistics plan designed to streamline your operations and boost efficiency.</p>
-                <form id="logisticsForm">
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="emailInput" placeholder="Enter your business email" required>
+                <p class="mbr-text display-7">Let us create a tailored logistics solution that perfectly matches your business needs. Please provide the details below for your personalized plan.</p>
+                <form id="logisticsForm" class="needs-validation" novalidate>
+                    <!-- Contact Information -->
+                    <div class="form-section mb-4">
+                        <h6 class="mb-3 display-7"><strong>Contact Information</strong></h6>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="businessName" placeholder="Business Name" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" id="businessEmail" placeholder="Business Email" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number" required>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mx-0 display-7 w-100">Send Me My Free Plan</button>
+
+                    <!-- Service & Cargo Details -->
+                    <div class="form-section mb-4">
+                        <h6 class="mb-3 display-7"><strong>Service & Cargo Details</strong></h6>
+                        <div class="mb-3">
+                            <label class="form-label">Services Needed</label>
+                            <div class="checkbox-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="airFreight" id="airFreight">
+                                    <label class="form-check-label" for="airFreight">Air Freight</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="seaFreight" id="seaFreight">
+                                    <label class="form-check-label" for="seaFreight">Sea Freight</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="roadLogistics" id="roadLogistics">
+                                    <label class="form-check-label" for="roadLogistics">European Road Logistics</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="warehousing" id="warehousing">
+                                    <label class="form-check-label" for="warehousing">Warehousing/Fulfillment</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="customs" id="customs">
+                                    <label class="form-check-label" for="customs">Customs Clearance</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="other" id="otherService">
+                                    <label class="form-check-label" for="otherService">Other</label>
+                                </div>
+                            </div>
+                            <div class="mt-2 d-none" id="otherServiceField">
+                                <input type="text" class="form-control" placeholder="Please specify other service">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control" id="cargoDescription" rows="2" placeholder="Cargo Description (e.g., '5 pallets of electronics')" required></textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="origin" placeholder="Origin (Country/City)" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="destination" placeholder="Destination (Country/City)" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <input type="number" class="form-control" id="length" placeholder="Length (cm)">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="number" class="form-control" id="width" placeholder="Width (cm)">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="number" class="form-control" id="height" placeholder="Height (cm)">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="number" class="form-control" id="weight" placeholder="Weight (kg)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="form-section mb-4">
+                        <h6 class="mb-3 display-7"><strong>Timeline</strong></h6>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Ready Date</label>
+                                <input type="date" class="form-control" id="readyDate" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Desired Delivery Date</label>
+                                <input type="date" class="form-control" id="deliveryDate" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary display-7 w-100">Get My Custom Plan</button>
                 </form>
             </div>
             <div class="modal-body" id="modalSuccessContent" style="display: none;">
                 <div class="text-center">
                     <i class="mbr-iconfont mobi-mbri-success mobi-mbri" style="color: #9fe870; font-size: 3rem;"></i>
-                    <h5 class="display-5 mt-3">Success!</h5>
-                    <p class="mbr-text display-7">Your logistics plan is on its way! Check your inbox in the next few minutes. While you wait, why not explore our comprehensive solutions?</p>
-                    <a href="solution.html" class="btn btn-success-outline display-7 mt-3">Explore Our Solutions</a>
+                    <h5 class="display-5 mt-3">Thank You!</h5>
+                    <p class="mbr-text display-7">We're already working on your custom logistics plan. One of our experts will contact you within 24 hours with your tailored solution.</p>
+                    <a href="solutions.html" class="btn btn-success-outline display-7 mt-3">Explore Our Solutions</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Contact/Advisor Modal -->
 <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title card-title mbr-fonts-style display-5" id="contactModalLabel">Let's Start Your Journey</h5>
-                <button type="button" class="close hidden" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title card-title mbr-fonts-style display-5" id="contactModalLabel">
+                    <strong>Speak with Our Logistics Advisor</strong>
+                </h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" id="contactInitialContent">
-                <p class="mbr-text display-7">Share your logistics challenges with us, and we'll craft a solution that perfectly fits your business needs.</p>
-                <form id="contactForm" class="mbr-form">
-                    <div class="form-group mb-3">
-                        <input type="text" class="form-control" id="nameInput" placeholder="Your Name" required>
+                <p class="mbr-text display-7">Let's discuss how we can help optimize your logistics operations. Our expert advisor will get in touch to understand your needs better.</p>
+                <form id="contactForm" class="needs-validation" novalidate>
+                    <div class="form-section mb-4">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="advisorName" placeholder="Full Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="advisorBusinessName" placeholder="Business Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="advisorEmail" placeholder="Business Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" id="advisorPhone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" id="industry" required>
+                                <option value="">Select Your Industry</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="retail">Retail</option>
+                                <option value="tech">Technology</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="logisticsChallenge" rows="3" placeholder="What logistics challenges are you currently facing?" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Preferred Contact Time</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-select" id="contactTime" required>
+                                        <option value="">Select Time</option>
+                                        <option value="morning">Morning (9AM-12PM)</option>
+                                        <option value="afternoon">Afternoon (12PM-5PM)</option>
+                                        <option value="evening">Evening (5PM-7PM)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-select" id="contactDay" required>
+                                        <option value="">Select Day</option>
+                                        <option value="weekday">Weekdays</option>
+                                        <option value="weekend">Weekend</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group mb-3">
-                        <input type="tel" class="form-control" id="phoneInput" placeholder="Phone Number" required>
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="email" class="form-control" id="contactEmail" placeholder="Business Email" required>
-                    </div>
-                    <div class="form-group mb-3">
-                        <textarea class="form-control" id="enquiryInput" rows="4" placeholder="Tell us about your shipping needs..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary display-7 mx-0 w-100">Send Enquiry</button>
+                    <button type="submit" class="btn btn-primary display-7 w-100">Schedule Consultation</button>
                 </form>
             </div>
             <div class="modal-body" id="contactSuccessContent" style="display: none;">
                 <div class="text-center">
                     <i class="mbr-iconfont mobi-mbri-success mobi-mbri" style="color: #9fe870; font-size: 3rem;"></i>
-                    <h5 class="display-5 mt-3">Message Received!</h5>
-                    <p class="mbr-text display-7">Thank you for reaching out. Our logistics expert will contact you within the next 24 hours to discuss your requirements.</p>
-                    <a href="solution.html" class="btn btn-success-outline display-7 mt-3">Explore Our Solutions</a>
+                    <h5 class="display-5 mt-3">We'll Be in Touch Soon!</h5>
+                    <p class="mbr-text display-7">Thank you for reaching out. Our logistics advisor will contact you at your preferred time to discuss your needs and how we can help.</p>
+                    <a href="about.html" class="btn btn-success-outline display-7 mt-3">Learn More About Us</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script><script src="assets/mobirise/script/addition.js"></script>   
+  

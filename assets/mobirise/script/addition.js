@@ -1,29 +1,35 @@
-// Add this code before the closing </body> tag
-document.getElementById('logisticsForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Here you would typically send the email to your server
-    // For now, we'll just show the success message
-    
-    document.getElementById('modalInitialContent').style.display = 'none';
-    document.getElementById('modalSuccessContent').style.display = 'block';
-    
-    // Optional: Send the email to your server
-    const email = document.getElementById('emailInput').value;
-    // Add your email handling logic here
-});
-
-// Reset modal on close
-$('#logisticsModal').on('hidden.bs.modal', function () {
-    document.getElementById('modalInitialContent').style.display = 'block';
-    document.getElementById('modalSuccessContent').style.display = 'none';
-    document.getElementById('logisticsForm').reset();
-});
-
-
-// Initialize contact modal functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Add click event listener to all buttons with cntct-btn class
+    initializeModals();
+    initializeFormValidation();
+    initializeServiceFields();
+});
+
+function initializeModals() {
+    // Initialize logistics modal
+    initializeLogisticsModal();
+    // Initialize contact modal
+    initializeContactModal();
+}
+
+function initializeLogisticsModal() {
+    document.querySelectorAll('[data-target="#logisticsModal"]').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            $('#logisticsModal').modal('show');
+        });
+    });
+
+    const logisticsForm = document.getElementById('logisticsForm');
+    if (logisticsForm) {
+        logisticsForm.addEventListener('submit', handleLogisticsSubmit);
+    }
+
+    $('#logisticsModal').on('hidden.bs.modal', function() {
+        resetModal('logistics');
+    });
+}
+
+function initializeContactModal() {
     document.querySelectorAll('.cntct-btn').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
@@ -31,24 +37,75 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle contact form submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Here you would typically send the form data to your server
-        // For now, we'll just show the success message
-        
-        document.getElementById('contactInitialContent').style.display = 'none';
-        document.getElementById('contactSuccessContent').style.display = 'block';
-        
-        // Optional: Reset form
-        this.reset();
-    });
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleContactSubmit);
+    }
 
-    // Reset modal on close
-    $('#contactModal').on('hidden.bs.modal', function () {
-        document.getElementById('contactInitialContent').style.display = 'block';
-        document.getElementById('contactSuccessContent').style.display = 'none';
-        document.getElementById('contactForm').reset();
+    $('#contactModal').on('hidden.bs.modal', function() {
+        resetModal('contact');
     });
-});
+}
+
+function handleLogisticsSubmit(e) {
+    e.preventDefault();
+    
+    // Here you would typically send the form data to your server
+    // const formData = new FormData(this);
+    // await sendToServer(formData);
+    
+    toggleModalContent('logistics', true);
+}
+
+function handleContactSubmit(e) {
+    e.preventDefault();
+    
+    // Here you would typically send the form data to your server
+    // const formData = new FormData(this);
+    // await sendToServer(formData);
+    
+    toggleModalContent('contact', true);
+}
+
+function toggleModalContent(modalType, showSuccess) {
+    const initialContent = document.getElementById(`${modalType}InitialContent`);
+    const successContent = document.getElementById(`${modalType}SuccessContent`);
+    
+    if (initialContent && successContent) {
+        initialContent.style.display = showSuccess ? 'none' : 'block';
+        successContent.style.display = showSuccess ? 'block' : 'none';
+    }
+}
+
+function resetModal(modalType) {
+    toggleModalContent(modalType, false);
+    const form = document.getElementById(`${modalType}Form`);
+    if (form) {
+        form.reset();
+        form.classList.remove('was-validated');
+    }
+}
+
+function initializeFormValidation() {
+    document.querySelectorAll('.needs-validation').forEach(form => {
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    });
+}
+
+function initializeServiceFields() {
+    const otherServiceCheckbox = document.getElementById('otherService');
+    if (otherServiceCheckbox) {
+        otherServiceCheckbox.addEventListener('change', function() {
+            const otherField = document.getElementById('otherServiceField');
+            if (otherField) {
+                otherField.classList.toggle('d-none', !this.checked);
+            }
+        });
+    }
+}

@@ -4078,6 +4078,56 @@ a {
     padding: 1rem 2rem;
 }
 
+/* Modal Form Styles */
+.form-section {
+    background: rgba(159, 232, 112, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-section h6 {
+    color: #333;
+    margin-bottom: 1.25rem;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.form-check-input:checked {
+    background-color: #9fe870;
+    border-color: #9fe870;
+}
+
+.form-select {
+    border-radius: 100px;
+    padding: 1rem 1.5rem;
+    height: auto;
+    border: 2px solid rgba(27, 31, 10, 0.1);
+}
+
+.form-select:focus {
+    border-color: #9fe870;
+    box-shadow: none;
+}
+
+textarea.form-control {
+    border-radius: 20px;
+}
+
+.modal-dialog-centered.modal-lg {
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Contact Modal Styles */
 #contactModal .form-control {
     border-radius: 100px;
