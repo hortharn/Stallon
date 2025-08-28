@@ -4240,7 +4240,7 @@ textarea.form-control {
 .wa-form-body .form-control{
     font-size: 1rem;
     padding: 1rem 1.5rem;
-    border-radius: 24px !important;
+    border-radius: 4px !important;
 }
 
 .wa-float-form.active {
