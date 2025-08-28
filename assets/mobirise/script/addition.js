@@ -102,7 +102,6 @@ function initializeServiceFields() {
 }
 
 
-function initializeWhatsAppFloat() {
     const waFloatBtn = document.getElementById('waFloatBtn');
     const waFloatForm = document.getElementById('waFloatForm');
     const waCloseBtn = document.getElementById('waCloseBtn');
@@ -141,4 +140,3 @@ function initializeWhatsAppFloat() {
             waFloatForm.classList.remove('active');
         }
     });
-}
