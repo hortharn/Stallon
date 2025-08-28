@@ -26,79 +26,6 @@ function initializeModals() {
         });
     });
 
-    // Form handlers - just show success message without submission
-    const logisticsForm = document.getElementById('logisticsForm');
-    if (logisticsForm) {
-        logisticsForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent form submission
-            if (this.checkValidity()) {
-                document.getElementById('modalInitialContent').style.display = 'none';
-                document.getElementById('modalSuccessContent').style.display = 'block';
-            }
-            this.classList.add('was-validated');
-        });
-    }
-
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent form submission
-            if (this.checkValidity()) {
-                document.getElementById('contactInitialContent').style.display = 'none';
-                document.getElementById('contactSuccessContent').style.display = 'block';
-            }
-            this.classList.add('was-validated');
-        });
-    }
-
-    // Reset modals when closed
-    ['logisticsModal', 'contactModal'].forEach(modalId => {
-        const modalElement = document.getElementById(modalId);
-        if (modalElement) {
-            modalElement.addEventListener('hidden.bs.modal', function() {
-                const initialContent = this.querySelector('[id$="InitialContent"]');
-                const successContent = this.querySelector('[id$="SuccessContent"]');
-                const form = this.querySelector('form');
-                
-                if (initialContent) initialContent.style.display = 'block';
-                if (successContent) successContent.style.display = 'none';
-                if (form) {
-                    form.reset();
-                    form.classList.remove('was-validated');
-                }
-                
-                // Clean up any orphaned backdrops
-                document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
-                    backdrop.remove();
-                });
-                document.body.classList.remove('modal-open');
-                document.body.style.removeProperty('padding-right');
-            });
-        }
-    });
-}
-
-/*
-TODO: Properly Store the values to the server using AJAX or Fetch API
-function initializeModals() {
-    // Initialize logistics modal
-    document.querySelectorAll('[data-target="#logisticsModal"]').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const modal = new bootstrap.Modal(document.getElementById('logisticsModal'));
-            modal.show();
-        });
-    });
-
-    // Initialize contact modal
-    document.querySelectorAll('.cntct-btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const modal = new bootstrap.Modal(document.getElementById('contactModal'));
-            modal.show();
-        });
-    });
-
     // Form handlers
     const logisticsForm = document.getElementById('logisticsForm');
     if (logisticsForm) {
@@ -160,7 +87,7 @@ function initializeFormValidation() {
         });
     });
 }
-*/
+
 function initializeServiceFields() {
     const otherServiceCheckbox = document.getElementById('otherService');
     if (otherServiceCheckbox) {
