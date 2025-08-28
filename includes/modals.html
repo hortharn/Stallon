@@ -1,0 +1,70 @@
+
+<!-- Add this modal code before the closing </body> tag -->
+<div class="modal fade" id="logisticsModal" tabindex="-1" role="dialog" aria-labelledby="logisticsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title display-5" id="logisticsModalLabel">Your Custom Logistics Plan Awaits</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalInitialContent">
+                <p class="mbr-text display-7">Ready to take control of your supply chain? Enter your email below to receive your personalized logistics plan designed to streamline your operations and boost efficiency.</p>
+                <form id="logisticsForm">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="emailInput" placeholder="Enter your business email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary display-7 w-100">Send Me My Free Plan</button>
+                </form>
+            </div>
+            <div class="modal-body" id="modalSuccessContent" style="display: none;">
+                <div class="text-center">
+                    <i class="mbr-iconfont mobi-mbri-success mobi-mbri" style="color: #9fe870; font-size: 3rem;"></i>
+                    <h5 class="display-5 mt-3">Success!</h5>
+                    <p class="mbr-text display-7">Your logistics plan is on its way! Check your inbox in the next few minutes. While you wait, why not explore our comprehensive solutions?</p>
+                    <a href="solution.html" class="btn btn-success-outline display-7 mt-3">Explore Our Solutions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title display-5" id="contactModalLabel">Let's Start Your Journey</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contactInitialContent">
+                <p class="mbr-text display-7">Share your logistics challenges with us, and we'll craft a solution that perfectly fits your business needs.</p>
+                <form id="contactForm" class="mbr-form">
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" id="nameInput" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="tel" class="form-control" id="phoneInput" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="email" class="form-control" id="contactEmail" placeholder="Business Email" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <textarea class="form-control" id="enquiryInput" rows="4" placeholder="Tell us about your shipping needs..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary display-7 w-100">Send Enquiry</button>
+                </form>
+            </div>
+            <div class="modal-body" id="contactSuccessContent" style="display: none;">
+                <div class="text-center">
+                    <i class="mbr-iconfont mobi-mbri-success mobi-mbri" style="color: #9fe870; font-size: 3rem;"></i>
+                    <h5 class="display-5 mt-3">Message Received!</h5>
+                    <p class="mbr-text display-7">Thank you for reaching out. Our logistics expert will contact you within the next 24 hours to discuss your requirements.</p>
+                    <a href="solution.html" class="btn btn-success-outline display-7 mt-3">Explore Our Solutions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
