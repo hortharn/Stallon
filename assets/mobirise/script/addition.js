@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Wait for modals to be loaded before initializing
     setTimeout(() => {
         initializeModals();
+        initializeWhatsAppFloat(); 
         initializeFormValidation();
         initializeServiceFields();
-        initializeWhatsAppFloat(); 
     }, 350);
 });
 
@@ -101,7 +101,7 @@ function initializeServiceFields() {
     }
 }
 
-
+function initializeWhatsAppFloat() {
     const waFloatBtn = document.getElementById('waFloatBtn');
     const waFloatForm = document.getElementById('waFloatForm');
     const waCloseBtn = document.getElementById('waCloseBtn');
@@ -140,3 +140,4 @@ function initializeServiceFields() {
             waFloatForm.classList.remove('active');
         }
     });
+}
