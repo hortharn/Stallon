@@ -4030,6 +4030,7 @@ a {
 /*Added AI*/
 /* Add these styles at the end of the file */
 .modal-content {
+  height: fit-content;
     border-radius: 2rem;
     border: none;
     box-shadow: 0 30px 60px 0 rgba(27, 31, 10, 0.1);
