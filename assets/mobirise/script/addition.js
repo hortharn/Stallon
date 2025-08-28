@@ -38,7 +38,7 @@ function initializeModals() {
     }
 }
 function handleLogisticsSubmit(e) {
-    e.preventDefault();
+    //e.preventDefault();
     
     // Here you would typically send the form data to your server
     // const formData = new FormData(this);
@@ -48,7 +48,7 @@ function handleLogisticsSubmit(e) {
 }
 
 function handleContactSubmit(e) {
-    e.preventDefault();
+    //e.preventDefault();
     
     // Here you would typically send the form data to your server
     // const formData = new FormData(this);
