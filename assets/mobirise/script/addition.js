@@ -109,3 +109,58 @@ function initializeServiceFields() {
         });
     }
 }
+
+// ...existing code...
+
+function resetModal(modalType) {
+    toggleModalContent(modalType, false);
+    const form = document.getElementById(`${modalType}Form`);
+    if (form) {
+        form.reset();
+        form.classList.remove('was-validated');
+    }
+    
+    // Remove modal backdrop
+    const backdrop = document.querySelector('.modal-backdrop');
+    if (backdrop) {
+        backdrop.remove();
+    }
+    // Remove modal-open class from body
+    document.body.classList.remove('modal-open');
+    // Remove inline styles from body
+    document.body.style.removeProperty('padding-right');
+    document.body.style.removeProperty('overflow');
+}
+
+// Add this new function to handle proper modal cleanup
+function cleanupModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.addEventListener('hidden.bs.modal', function() {
+            // Remove modal backdrop
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+            // Remove modal-open class from body
+            document.body.classList.remove('modal-open');
+            // Remove inline styles from body
+            document.body.style.removeProperty('padding-right');
+            document.body.style.removeProperty('overflow');
+        });
+    }
+}
+
+// Modify initializeModals to include cleanup
+function initializeModals() {
+    // Initialize logistics modal
+    initializeLogisticsModal();
+    // Initialize contact modal
+    initializeContactModal();
+    
+    // Add cleanup handlers
+    cleanupModal('logisticsModal');
+    cleanupModal('contactModal');
+}
+
+// ...rest of existing code...
