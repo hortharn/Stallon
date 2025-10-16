@@ -38,24 +38,55 @@ function initializeModals() {
         contactForm.addEventListener('submit', handleContactSubmit);
     }
 }
-function handleLogisticsSubmit(e) {
-    //e.preventDefault();
+async function handleLogisticsSubmit(e) {
+    e.preventDefault();
     
-    // Here you would typically send the form data to your server
-    // const formData = new FormData(this);
-    // await sendToServer(formData);
-    
-    toggleModalContent('logistics', true);
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+        const response = await fetch('https://track.stallon.co.uk/api/forms/logistics-plan-request', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            toggleModalContent('logistics', true);
+        } else {
+            // Handle error
+            console.error('Form submission failed');
+        }
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
 }
 
-function handleContactSubmit(e) {
-    //e.preventDefault();
+async function handleContactSubmit(e) {
+    e.preventDefault();
     
-    // Here you would typically send the form data to your server
-    // const formData = new FormData(this);
-    // await sendToServer(formData);
-    
-    toggleModalContent('contact', true);
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+        const response = await fetch('https://track.stallon.co.uk/api/forms/advisor-consultation-request', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            toggleModalContent('contact', true);
+        } else {
+            console.error('Form submission failed');
+        }
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
 }
 
 function toggleModalContent(modalType, showSuccess) {
